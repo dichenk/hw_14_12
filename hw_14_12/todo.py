@@ -16,6 +16,14 @@ class Task:
     def __hash__(self):
         return hash(self.content)
 
+    def __booll__(self):
+        return len(self.content) > 0
+
+    def __len__(self):
+        return len(self.content)
+
+
+## задание 1
 todo_list = set()
 todo_list.add(Task('Do homework'))
 todo_list.add(Task('Do garden'))
@@ -24,3 +32,16 @@ todo_list.add(Task('Do homework'))
 
 for i in todo_list:
     print(i)
+
+## задание 2
+todo_list = []
+todo_list.append(Task('Сделать домашку'))
+todo_list.append(Task(''))
+todo_list.append(Task('Сделать домашку'))
+todo_list.append(Task(''))
+
+print()
+non_empty_tasks = [item for item in todo_list if item]
+for i in non_empty_tasks:
+    print(i)
+print(len([item for item in todo_list if not item]))
